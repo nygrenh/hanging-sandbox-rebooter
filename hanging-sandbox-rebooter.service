@@ -1,0 +1,14 @@
+[Unit]
+Description=Sandbox rebooter
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/hanging-sandbox-rebooter
+
+ExecStart=/usr/bin/node index.js
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
